@@ -10,6 +10,7 @@
 //DEPS io.jactl:jactl:2.9.2
 //DEPS org.apache.groovy:groovy:5.1.2
 //DEPS com.ezylang:EvalEx:3.7.0
+//DEPS org.python:jython-slim:2.7.5b1
 
 package io.tulip;
 

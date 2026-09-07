@@ -7,8 +7,11 @@ import org.slf4j.LoggerFactory;
 import io.jactl.Jactl;
 import groovy.util.Eval;
 import com.ezylang.evalex.Expression;
+import org.python.util.PythonInterpreter;
 
 public class JactlUser extends HttpUser {
+
+    PythonInterpreter jython = new PythonInterpreter();
 
     public boolean onStart() {
         // Initialize the shared RestClient object only once
@@ -33,6 +36,12 @@ public class JactlUser extends HttpUser {
 
     // Action 3
     public boolean action3() {
+        var result = jython.eval("3 + 4");
+        return true;
+    }
+
+    // Action 4
+    public boolean action4() {
         try {
             var result = (new Expression("3 + 4")).evaluate();
             return true;

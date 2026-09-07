@@ -15,7 +15,8 @@
         "user_actions": {
             "1": "Jactl:eval",
             "2": "Groovy:eval",
-            "3": "EvalEx:eval"
+            "3": "Jython:eval",
+            "4": "EvalEx:eval"
         }
     },
     "benchmarks": {
@@ -25,13 +26,10 @@
             "scenario_actions": [
                 {
                     "id": 1, "weight": 100
-                },
-                {
-                    "id": 2, "weight": 0
                 }
             ],
             "warmup_duration1": 30,
-            "warmup_duration2": 10,
+            "warmup_duration2": 30,
             "benchmark_duration": 30,
             "benchmark_iterations": 3
         },
@@ -40,26 +38,39 @@
             "aps_rate": 2000.0,
             "scenario_actions": [
                 {
-                    "id": 1, "weight": 0
-                },
-                {
                     "id": 2, "weight": 100
                 }
             ],
             "warmup_duration1": 30,
-            "warmup_duration2": 10,
+            "warmup_duration2": 30,
             "benchmark_duration": 30,
             "benchmark_iterations": 3
         },
-        "Jactl + Groovy": {
+        "Jython": {
             "enabled": true,
             "aps_rate": 2000.0,
             "scenario_actions": [
                 {
-                    "id": 1, "weight": 50
+                    "id": 3, "weight": 100
+                }
+            ],
+            "warmup_duration1": 30,
+            "warmup_duration2": 30,
+            "benchmark_duration": 30,
+            "benchmark_iterations": 3
+        },
+        "All": {
+            "enabled": true,
+            "aps_rate": 2000.0,
+            "scenario_actions": [
+                {
+                    "id": 1, "weight": 34
                 },
                 {
-                    "id": 2, "weight": 50
+                    "id": 2, "weight": 33
+                },
+                {
+                    "id": 3, "weight": 33
                 }
             ],
             "warmup_duration1": 30,
