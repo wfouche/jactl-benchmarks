@@ -1,0 +1,78 @@
+{
+    "actions": {
+        "description": "Jactl vs Groovy [Java]",
+        "output_filename": "benchmark_output.json",
+        "report_filename": "benchmark_report.html",
+        "user_class": "io.tulip.JactlUser",
+        "user_params": {
+            "url": "http://jsonplaceholder.typicode.com",
+            "httpVersion": "HTTP_1_1",
+            "connectTimeoutMillis": 5000,
+            "readTimeoutMillis": 10000,
+            "shareConnections": true,
+            "debug": true
+        },
+        "user_actions": {
+            "1": "Jactl:eval",
+            "2": "Groovy:eval",
+            "3": "EvalEx:eval"
+        }
+    },
+    "benchmarks": {
+        "Jactl": {
+            "enabled": true,
+            "aps_rate": 2000.0,
+            "scenario_actions": [
+                {
+                    "id": 1, "weight": 100
+                },
+                {
+                    "id": 2, "weight": 0
+                }
+            ],
+            "warmup_duration1": 30,
+            "warmup_duration2": 10,
+            "benchmark_duration": 30,
+            "benchmark_iterations": 3
+        },
+        "Groovy": {
+            "enabled": true,
+            "aps_rate": 2000.0,
+            "scenario_actions": [
+                {
+                    "id": 1, "weight": 0
+                },
+                {
+                    "id": 2, "weight": 100
+                }
+            ],
+            "warmup_duration1": 30,
+            "warmup_duration2": 10,
+            "benchmark_duration": 30,
+            "benchmark_iterations": 3
+        },
+        "Jactl + Groovy": {
+            "enabled": true,
+            "aps_rate": 2000.0,
+            "scenario_actions": [
+                {
+                    "id": 1, "weight": 50
+                },
+                {
+                    "id": 2, "weight": 50
+                }
+            ],
+            "warmup_duration1": 30,
+            "warmup_duration2": 10,
+            "benchmark_duration": 30,
+            "benchmark_iterations": 3
+        }
+    },
+    "contexts": {
+        "Context-1": {
+            "enabled": true,
+            "num_users": 32,
+            "num_threads": 0
+        }
+    }
+}
