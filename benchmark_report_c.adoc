@@ -45,7 +45,8 @@
 ! id ! value ! description
 ! *1* ! Jactl:eval! 
 ! *2* ! Groovy:eval! 
-! *3* ! EvalEx:eval! 
+! *3* ! Jython:eval! 
+! *4* ! EvalEx:eval! 
 !===
 |===
 
@@ -77,11 +78,9 @@
 ! id ! weight 
 ! 1
 ! 100 
-! 2
-! - 
 !===
 | *warmup_duration1* | 30
-| *warmup_duration2* | 10
+| *warmup_duration2* | 30
 | *benchmark_duration* | 30
 | *benchmark_iterations* | 3
 |===
@@ -98,18 +97,37 @@
 [%header,cols="1a,2a"]
 !===
 ! id ! weight 
-! 1
-! - 
 ! 2
 ! 100 
 !===
 | *warmup_duration1* | 30
-| *warmup_duration2* | 10
+| *warmup_duration2* | 30
 | *benchmark_duration* | 30
 | *benchmark_iterations* | 3
 |===
 
-=== Jactl + Groovy
+=== Jython
+
+[%header,cols="1a,2a"]
+|===
+| id | value
+| *enabled* | True
+| *aps_rate* | 2000.0
+| *scenario_actions* 
+| 
+[%header,cols="1a,2a"]
+!===
+! id ! weight 
+! 3
+! 100 
+!===
+| *warmup_duration1* | 30
+| *warmup_duration2* | 30
+| *benchmark_duration* | 30
+| *benchmark_iterations* | 3
+|===
+
+=== All
 
 [%header,cols="1a,2a"]
 |===
@@ -122,9 +140,11 @@
 !===
 ! id ! weight 
 ! 1
-! 50 
+! 34 
 ! 2
-! 50 
+! 33 
+! 3
+! 33 
 !===
 | *warmup_duration1* | 30
 | *warmup_duration2* | 10
@@ -153,7 +173,8 @@
         "user_actions": {
             "1": "Jactl:eval", 
             "2": "Groovy:eval", 
-            "3": "EvalEx:eval"
+            "3": "Jython:eval", 
+            "4": "EvalEx:eval"
         }
     }, 
     "contexts": {
@@ -169,13 +190,10 @@
                 {
                     "id": 1, 
                     "weight": 100
-                }, 
-                {
-                    "id": 2
                 }
             ], 
             "warmup_duration1": 30, 
-            "warmup_duration2": 10, 
+            "warmup_duration2": 30, 
             "benchmark_duration": 30, 
             "benchmark_iterations": 3
         }, 
@@ -183,28 +201,42 @@
             "aps_rate": 2000.0, 
             "scenario_actions": [
                 {
-                    "id": 1
-                }, 
-                {
                     "id": 2, 
                     "weight": 100
                 }
             ], 
             "warmup_duration1": 30, 
-            "warmup_duration2": 10, 
+            "warmup_duration2": 30, 
             "benchmark_duration": 30, 
             "benchmark_iterations": 3
         }, 
-        "Jactl + Groovy": {
+        "Jython": {
+            "aps_rate": 2000.0, 
+            "scenario_actions": [
+                {
+                    "id": 3, 
+                    "weight": 100
+                }
+            ], 
+            "warmup_duration1": 30, 
+            "warmup_duration2": 30, 
+            "benchmark_duration": 30, 
+            "benchmark_iterations": 3
+        }, 
+        "All": {
             "aps_rate": 2000.0, 
             "scenario_actions": [
                 {
                     "id": 1, 
-                    "weight": 50
+                    "weight": 34
                 }, 
                 {
                     "id": 2, 
-                    "weight": 50
+                    "weight": 33
+                }, 
+                {
+                    "id": 3, 
+                    "weight": 33
                 }
             ], 
             "warmup_duration1": 30, 
