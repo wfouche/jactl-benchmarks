@@ -258,5 +258,8 @@
 
 == JVM Runtime Options
 
-* Option 1: -Xmx2g
-* Option 2: -Xms2g
+* Option 1: -XX:+IgnoreUnrecognizedVMOptions
+* Option 2: --enable-native-access=ALL-UNNAMED
+* Option 3: --sun-misc-unsafe-memory-access=allow
+* Option 4: -Xmx2g
+* Option 5: -Xms2g
