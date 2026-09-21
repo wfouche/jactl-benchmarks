@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -f benchmark_report.html
 export     JBANG_JAVA_OPTIONS=-XX:TieredStopAtLevel=1
-export JBANG_APP_JAVA_OPTIONS="-Xmx2g -Xms2g"
+export JBANG_APP_JAVA_OPTIONS="-Xmx1g -Xms1g"
 #-XX:+UseZGC
 jbang run io/tulip/App.java
 echo ""
