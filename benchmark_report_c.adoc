@@ -251,8 +251,8 @@
 == JVM System Properties
 
 * java.vendor: Eclipse Adoptium
-* java.version: 26.0.2.1
-* java.runtime.version: 26.0.2.1+1
+* java.version: 27-beta
+* java.runtime.version: 27-beta+35-ea
 * os.name: Linux
 * os.arch: amd64
 
