@@ -1,7 +1,7 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.github.tulipltt:tulip-runtime:2.3.6
+//DEPS io.github.tulipltt:tulip-runtime:2.3.7
 //SOURCES JactlUser.java
-//JAVA 26
+//JAVA 27
 //FILES ../../benchmark_config.json
 //FILES ../../logback.xml
 //RUNTIME_OPTIONS -XX:+IgnoreUnrecognizedVMOptions
